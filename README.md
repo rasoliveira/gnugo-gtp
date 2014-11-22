@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/ludug3r0/gnugo-gtp.svg?branch=master)](https://travis-ci.org/ludug3r0/gnugo-gtp)
-[![Clojars Project](http://clojars.org/org.clojars.ludug3r0/gnugo-gtp/latest-version.svg)]
 
 # gnugo-gtp
 
