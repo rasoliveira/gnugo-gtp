@@ -8,5 +8,5 @@
                  [me.raynes/conch "0.8.0"]]
   :scm {:name "git"
         :url  "https://github.com/ludug3r0/gnugo-gtp"}
-  :profiles {:dev {:dependencies [[midje "1.6.3"]
-                                  [lein-midje "3.1.1"]]}})
+  :profiles {:dev {:dependencies [[midje "1.6.3"]]
+                   :plugins      [[lein-midje "3.1.1"]]}})
