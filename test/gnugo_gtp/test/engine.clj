@@ -56,5 +56,6 @@
       (let [engine (new-engine)]
         (-> engine
             (play "black" "Q16")
-            (genmove "white")
-            last-message) => "D4"))
+            (play "white" "D4")
+            (genmove "black")
+            last-message) => "Q4"))
