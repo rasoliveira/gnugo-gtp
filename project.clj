@@ -9,4 +9,4 @@
   :scm {:name "git"
         :url  "https://github.com/ludug3r0/gnugo-gtp"}
   :profiles {:dev {:dependencies [[midje "1.6.3"]
-                                  [lein-midje "3.1.3"]]}})
+                                  [lein-midje "3.1.1"]]}})
