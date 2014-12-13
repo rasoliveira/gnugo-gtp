@@ -46,8 +46,15 @@
   (fact "engine is capable of generating moves on a empty game"
         (genmove [] :black) => [[:black [16 16]]])
 
+  (fact "engine can generated move on a game with previous moves"
+        (-> [[:black [16 16]] [:white [4 4]]]
+            (genmove :black)) => [[:black [16 16]] [:white [4 4]] [:black [16 4]]])
+
   (fact "engine is aware of previous generated moves"
         (-> []
             (genmove :black)
             (genmove :white)
-            (genmove :black)) => [[:black [16 16]] [:white [4 4]] [:black [16 4]]]))
+            (genmove :black)) => [[:black [16 16]] [:white [4 4]] [:black [16 4]]])
+  (fact "engine cannot understand resign (gtp limitation)"
+        (-> [[:black [16 16]] [:white [4 4]] [:black :resign]]
+            (genmove :white)) => (throws Exception)))

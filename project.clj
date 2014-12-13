@@ -6,7 +6,8 @@
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [me.raynes/conch "0.8.0"]
-                 [org.clojars.ludug3r0/go-rules "0.0.1-SNAPSHOT"]
+                 [org.clojars.ludug3r0/go-rules "0.0.2-SNAPSHOT"]
+                 [org.clojars.ludug3r0/go-schema "0.0.3-SNAPSHOT"]
                  [prismatic/schema "0.3.3"]]
   :scm {:name "git"
         :url  "https://github.com/ludug3r0/gnugo-gtp"}

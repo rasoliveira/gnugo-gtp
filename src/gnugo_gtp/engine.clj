@@ -26,12 +26,12 @@
 (s/defn color->str :- s/Str
   [move :- schema/move]
   (-> move
-      m/move-color
+      m/color
       name))
 
 (s/defn stone->vertex-str :- s/Str
-  [stone :- schema/stone]
-  (let [vertex (m/stone-vertex stone)
+  [stone :- schema/placement]
+  (let [vertex (m/move stone)
         column (first vertex)
         line (second vertex)
         column-str (get "abcdefghjklmnopqrst" (dec column))
@@ -41,8 +41,8 @@
 (s/defn move->vertex-str :- s/Str
   [move :- schema/move]
   (cond
-    (#'m/valid? schema/stone move) (stone->vertex-str move)
-    (#'m/valid? schema/pass move) "pass"
+    (m/is-placement? move) (stone->vertex-str move)
+    (m/is-pass? move) "pass"
     :else (throw (ex-info "cannot undestand move" {:move move}))))
 
 (s/defn ->genmove-command :- s/Str
@@ -57,8 +57,7 @@
 
 (defn- ->gtp-commands
   [game]
-  (let [moves (m/moves game)]
-    (vec (map ->play-command moves))))
+  (vec (map ->play-command game)))
 
 (defn- run-command
   [game command]
