@@ -5,7 +5,7 @@ sudo: false
 before_install:
  - wget https://github.com/rasoliveira/gnugo/archive/v3.9.2.tar.gz
  - tar -xzvf v3.9.2.tar.gz
- - pushd gnugo-3.9.2 && ./configure && ./make && popd
+ - pushd gnugo-3.9.2 && ./configure && make && popd
  - export PATH=$PATH:$(pwd)/gnugo-3.9.2/interface
 
 script: "lein midje"
