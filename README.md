@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ludug3r0/gnugo-gtp.svg?branch=master)](https://travis-ci.org/ludug3r0/gnugo-gtp)
+[![Build Status](https://travis-ci.org/rasoliveira/gnugo-gtp.svg?branch=master)](https://travis-ci.org/rasoliveira/gnugo-gtp)
 
 # gnugo-gtp
 
