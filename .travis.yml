@@ -1,6 +1,11 @@
 language: clojure
+
+sudo: false
+
 before_install:
- - sudo apt-get update -qq
- - sudo apt-get install -qq gnugo
- - export PATH=$PATH:/usr/games
+ - wget https://github.com/rasoliveira/gnugo/archive/v3.9.2.tar.gz
+ - tar -xzvf v3.9.2.tar.gz
+ - pushd gnugo-3.9.2 && ./configure && ./make && popd
+ - export PATH=$PATH:$(pwd)/gnugo-3.9.2/interface
+
 script: "lein midje"
